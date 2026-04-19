@@ -30,7 +30,7 @@ Built with **FastAPI**, **LangChain/LangGraph**, and **SQLModel** (async SQLite)
 ### 1. Clone & Install Dependencies
 
 ```bash
-git clone <your-repo-url> ai-productivity-agent
+git clone https://github.com/RecurringNoob/AI-productivity-agent.git
 cd ai-productivity-agent
 
 # Create and activate a virtual environment
