@@ -1,4 +1,4 @@
-# AI Productivity Agent v3.0
+# AI Productivity Agent 
 
 An advanced, agentic backend system designed to streamline your productivity by intelligently managing calendar scheduling and email triage. 
 
