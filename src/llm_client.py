@@ -12,13 +12,13 @@ from __future__ import annotations
 
 import os
 from functools import lru_cache
-
+from dotenv import load_dotenv
 import structlog
 from langchain_google_genai import ChatGoogleGenerativeAI
-
+load_dotenv()  # ← reads .env into os.environ at import time
 log = structlog.get_logger(__name__)
 
-MODEL_NAME: str = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+MODEL_NAME: str = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 TEMPERATURE: float = 0.0  # Deterministic by design (Design Doc behavioural rules)
 
 

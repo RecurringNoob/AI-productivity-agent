@@ -64,6 +64,7 @@ from src.tasks import expire_stale_loop
 from src.tools.calendar import SQLiteCalendarAdapter
 from src.tools.contests import AggregatingContestProvider, CodeforcesProvider, LeetCodeProvider
 from src.tools.email import StubEmailAdapter
+from fastapi.middleware.cors import CORSMiddleware
 
 log = structlog.get_logger(__name__)
 
@@ -179,7 +180,13 @@ app = FastAPI(
     version="3.0.0",
     lifespan=lifespan,
 )
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=os.getenv("CORS_ORIGINS", "*").split(","),
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ==============================================================================
 # Middleware — per-request latency logging (Phase 5)
